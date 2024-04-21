@@ -135,12 +135,21 @@ public class MyLinkedList<T> implements MyList<T> {
 
     // Removes the first element from this list
     @Override
-    public void removeFirst() {
-        if (size == 0) {
-            throw new NoSuchElementException("List is empty");
+    public T removeFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
         }
-        remove(0);
+        T element = head.data;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        } else {
+            head.prev = null;
+        }
+        size--;
+        return element; // Return the removed element
     }
+
 
     // Removes the last element from this list
     @Override

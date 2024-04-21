@@ -98,8 +98,9 @@ public class MyArrayList<T extends Comparable<T>> implements MyList<T> {
 
     // Removes the first element from this list.
     @Override
-    public void removeFirst() {
+    public T removeFirst() {
         remove(0);
+        return null;
     }
 
     // Removes the last element from this list.
