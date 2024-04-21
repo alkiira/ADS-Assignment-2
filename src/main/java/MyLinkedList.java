@@ -169,6 +169,10 @@ public class MyLinkedList<T> implements MyList<T> {
         return size;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     // Returns an iterator over the elements in this list in proper sequence
     @Override
     public Iterator<T> iterator() {
